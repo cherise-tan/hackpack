@@ -1,3 +1,5 @@
+// jshint esversion:6
+
 import React, {  useState} from 'react'
 import { render } from 'react-dom'
 
@@ -5,26 +7,47 @@ const App = () => {
   const [temp, setTemp] = useState(null);
 
   if (!temp) {
-    return <Temperature setTemp={setTemp} />
+    return <Form setTemp={setTemp} />
   }
 
   return <Pack temp={temp} />
 }
 
-const Temperature = (props) => {
+const Form = (props) => {
   return (
+    <form action="/" method="post">
+
+    <div>
+      <label>I am going to: </label>
+      <input id="destination" type="text" placeholder="Destination"/>
+    </div>
+    <div>
+      <label>Date of travel: </label>
+      <input id="date" type="date" placeholder="Date"/>
+    </div>
+    <div>
+      <label>Travel Style: </label>
+      <button>Pack Light</button>
+      <button>Pack Heavy</button>
+    </div>
+    <div>
+      <button type="submit" value="submit">Submit</button>
+    </div>
+
     <div>
       <button onClick = { () => props.setTemp("hot") } >Hot</button>
-      <button onClick = { () => props.setTemp("moderate") } >Moderate</button>
+      <button onClick = { () => props.setTemp("mild") } >Mild</button>
       <button onClick = { () => props.setTemp("cold") } >Cold</button>
+
     </div>
+    </form>
   )
 }
 
 const Pack = ({temp}) => {
   if (temp === 'hot') return <PackHot />
   if (temp === 'cold') return <PackCold />
-  return <PackWarm />
+  return <PackMild />
 }
 
 const PackCold = () => {
@@ -37,7 +60,7 @@ const PackCold = () => {
   )
 }
 
-const PackWarm = () => {
+const PackMild = () => {
   return(
     <ul>
     <li>Jumper</li>

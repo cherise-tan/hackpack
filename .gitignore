@@ -23,4 +23,4 @@ chrome-user-data
 *.swp
 *.swo
 .cache
-dist
+/dist/

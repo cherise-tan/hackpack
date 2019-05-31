@@ -8,7 +8,7 @@ const App = () => {
     return <Temperature setTemp={setTemp} />
   }
 
-  return <Pack temp={hot} />
+  return <Pack temp={temp} />
 }
 
 const Temperature = (props) => {

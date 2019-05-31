@@ -15,7 +15,7 @@ const Temperature = (props) => {
   return (
     <div>
       <button onClick = { () => props.setTemp("hot") } >Hot</button>
-      <button onClick = { () => props.setTemp("moderate") } >Moderate</button>
+      <button onClick = { () => props.setTemp("mild") } >Mild</button>
       <button onClick = { () => props.setTemp("cold") } >Cold</button>
     </div>
   )
@@ -24,7 +24,7 @@ const Temperature = (props) => {
 const Pack = ({temp}) => {
   if (temp === 'hot') return <PackHot />
   if (temp === 'cold') return <PackCold />
-  return <PackWarm />
+  return <PackMild />
 }
 
 const PackCold = () => {
@@ -37,7 +37,7 @@ const PackCold = () => {
   )
 }
 
-const PackWarm = () => {
+const PackMild = () => {
   return(
     <ul>
     <li>Jumper</li>

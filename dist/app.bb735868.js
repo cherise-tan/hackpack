@@ -25772,12 +25772,14 @@ var App = function App() {
       setTemp = _useState2[1];
 
   if (!temp) {
-    return _react.default.createElement("div", null, " ", _react.default.createElement(Temperature, {
+    return _react.default.createElement(Temperature, {
       setTemp: setTemp
-    }), " ");
+    });
   }
 
-  return _react.default.createElement("div", null, " ", _react.default.createElement(Pack, null), " ");
+  return _react.default.createElement(Pack, {
+    temp: temp
+  });
 };
 
 var Temperature = function Temperature(props) {
@@ -25785,19 +25787,34 @@ var Temperature = function Temperature(props) {
     onClick: function onClick() {
       return props.setTemp("hot");
     }
-  }, " Hot "), _react.default.createElement("button", {
+  }, "Hot"), _react.default.createElement("button", {
     onClick: function onClick() {
       return props.setTemp("moderate");
     }
-  }, " Moderate "), _react.default.createElement("button", {
+  }, "Moderate"), _react.default.createElement("button", {
     onClick: function onClick() {
       return props.setTemp("cold");
     }
-  }, " Cold "));
+  }, "Cold"));
 };
 
-var Pack = function Pack() {
-  return _react.default.createElement("h1", null, " I am pack ");
+var Pack = function Pack(_ref) {
+  var temp = _ref.temp;
+  if (temp === 'hot') return _react.default.createElement(PackHot, null);
+  if (temp === 'cold') return _react.default.createElement(PackCold, null);
+  return _react.default.createElement(PackWarm, null);
+};
+
+var PackCold = function PackCold() {
+  return _react.default.createElement("ul", null, _react.default.createElement("li", null, "Jacket"), _react.default.createElement("li", null, "Pants"), _react.default.createElement("li", null, "Scarf"));
+};
+
+var PackWarm = function PackWarm() {
+  return _react.default.createElement("ul", null, _react.default.createElement("li", null, "Jumper"), _react.default.createElement("li", null, "Pants"), _react.default.createElement("li", null, "Hat"));
+};
+
+var PackHot = function PackHot() {
+  return _react.default.createElement("ul", null, _react.default.createElement("li", null, "Singlet"), _react.default.createElement("li", null, "Shorts"));
 };
 
 (0, _reactDom.render)(_react.default.createElement(App, null), document.querySelector('#app'));
@@ -25829,7 +25846,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55156" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56067" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

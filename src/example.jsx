@@ -1,5 +1,7 @@
-import React, { useState } from 'react'
-import { render } from 'react-dom'
+// jshint esversion:6
+
+import React, { useState } from 'react';
+import { render } from 'react-dom';
 
 // const App = React.createElement('h1', {}, ['Hello world!'])
 const App = () => {

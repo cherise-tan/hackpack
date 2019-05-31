@@ -15,7 +15,14 @@ const App = () => {
 }
 
 const Temperature = () => {
-  return <h1>I am temperature</h1>
+  const [temp, setTemp] = useState(0);  console.log(temp);
+  return (
+    <div>
+      <button onClick={() => setTemp("hot")}>Hot</button>
+      <button onClick={() => setTemp("moderate")}>Moderate</button>
+      <button onClick={() => setTemp("cold")}>Cold</button>
+    </div>
+  )
 }
 
 const Pack = () => {

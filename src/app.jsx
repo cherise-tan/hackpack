@@ -15,20 +15,23 @@ const App = () => {
 
 const Form = (props) => {
   return (
-    <form>
+    <form action="/" method="post">
 
     <div>
       <label>I am going to: </label>
-      <input type="text" placeholder="Destination"/>
+      <input id="destination" type="text" placeholder="Destination"/>
     </div>
     <div>
       <label>Date of travel: </label>
-      <input type="date" placeholder="Date"/>
+      <input id="date" type="date" placeholder="Date"/>
     </div>
     <div>
       <label>Travel Style: </label>
       <button>Pack Light</button>
       <button>Pack Heavy</button>
+    </div>
+    <div>
+      <button type="submit" value="submit">Submit</button>
     </div>
 
     <div>

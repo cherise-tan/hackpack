@@ -25766,33 +25766,38 @@ function _iterableToArrayLimit(arr, i) { var _arr = []; var _n = true; var _d = 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 var App = function App() {
-  return _react.default.createElement("div", null, _react.default.createElement(Temperature, null), _react.default.createElement(Pack, null));
-};
-
-var Temperature = function Temperature() {
-  var _useState = (0, _react.useState)(0),
+  var _useState = (0, _react.useState)(null),
       _useState2 = _slicedToArray(_useState, 2),
       temp = _useState2[0],
       setTemp = _useState2[1];
 
-  console.log(temp);
+  if (!temp) {
+    return _react.default.createElement("div", null, " ", _react.default.createElement(Temperature, {
+      setTemp: setTemp
+    }), " ");
+  }
+
+  return _react.default.createElement("div", null, " ", _react.default.createElement(Pack, null), " ");
+};
+
+var Temperature = function Temperature(props) {
   return _react.default.createElement("div", null, _react.default.createElement("button", {
     onClick: function onClick() {
-      return setTemp("hot");
+      return props.setTemp("hot");
     }
-  }, "Hot"), _react.default.createElement("button", {
+  }, " Hot "), _react.default.createElement("button", {
     onClick: function onClick() {
-      return setTemp("moderate");
+      return props.setTemp("moderate");
     }
-  }, "Moderate"), _react.default.createElement("button", {
+  }, " Moderate "), _react.default.createElement("button", {
     onClick: function onClick() {
-      return setTemp("cold");
+      return props.setTemp("cold");
     }
-  }, "Cold"));
+  }, " Cold "));
 };
 
 var Pack = function Pack() {
-  return _react.default.createElement("h1", null, "I am pack");
+  return _react.default.createElement("h1", null, " I am pack ");
 };
 
 (0, _reactDom.render)(_react.default.createElement(App, null), document.querySelector('#app'));
@@ -25824,7 +25829,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52939" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55156" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

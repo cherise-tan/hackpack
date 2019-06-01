@@ -20,8 +20,9 @@ const List = ({ temp, days, laundry }) => {
 
   return (
     <div className="list">
-      <header>
+      <header class="list-header">
         <h3>Packing List</h3>
+        <h3 class="temp">{temp} °C</h3>
       </header>
       <ul>
         {items.map(item => (

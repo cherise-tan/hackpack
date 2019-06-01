@@ -8,8 +8,8 @@ const Form = (props) => {
         <input id="destination" type="text" placeholder="Destination" onChange={(event) => props.setDestination(event.target.value)}/>
       </div>
       <div className="inputblock">
-        <label>Date of travel: </label>
-        <input id="date" type="date" placeholder="Date"/>
+        <label>Number of days away: </label>
+        <input id="number" type="number" value={props.numDays} onChange={event => props.setNumDays(Number(event.target.value))}/>
       </div>
       <div className="inputblock">
         <label>Travel Style: </label>

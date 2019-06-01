@@ -6,6 +6,7 @@ import List from './List';
 
 const App = () => {
   const [destination, setDestination] = useState("");
+  const [numDays, setNumDays] = useState(1);
   const [forecast, setForecast] = useState([]);
   const [error, setError] = useState(null);
 
@@ -25,11 +26,18 @@ const App = () => {
 
   if (!forecast.length) {
     return (
-      <Form submit={submit} setDestination={setDestination} error={error} />
+      <Form submit={submit} setDestination={setDestination} numDays={numDays} setNumDays={setNumDays} error={error} />
     )
   }
 
-  return <List temp={forecast[0].temp} days={1} />
+  return <List temp={forecast[0].temp} days={numDays} />
 }
+
+const rules = [
+  {
+    item: 'Jacket',
+    needed: (temp, days) => temp < 20 ? 1 : 0
+  }
+]
 
 export default App

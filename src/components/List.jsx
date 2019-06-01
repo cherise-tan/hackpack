@@ -2,15 +2,12 @@
 
 import React from 'react';
 
-
-
 const renderItems = items => items.map(item => (
   <li key={item.item}>
     <span className="item-name">{item.item}</span>
     <span className="item-qty">x{item.needed}</span>
   </li>
 ))
-
 
 const List = ({ temp, days, laundry }) => {
 
@@ -29,8 +26,8 @@ const List = ({ temp, days, laundry }) => {
   });
 
   const generalItems = getNeededItems(generalRules);
-  const clothes =getNeededItems(clothesRules);
-
+  const clothes = getNeededItems(clothesRules);
+  const toiletries = getNeededItems(toiletriesRules);
 
   return (
     <div className="list">
@@ -45,6 +42,10 @@ const List = ({ temp, days, laundry }) => {
       <h4>Clothes</h4>
       <ul>
         {renderItems(clothes)}
+      </ul>
+      <h4>Toiletries</h4>
+      <ul>
+        {renderItems(toiletries)}
       </ul>
     </div>
   )
@@ -147,6 +148,14 @@ const clothesRules = [
 const toiletriesRules = [
   {
     item: 'Toothbrush',
+    needed: (temp, days) => 1
+  },
+  {
+    item: 'Toothpaste',
+    needed: (temp, days) => 1
+  },
+  {
+    item: 'Floss',
     needed: (temp, days) => 1
   },
   {

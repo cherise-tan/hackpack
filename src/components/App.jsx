@@ -29,7 +29,7 @@ const App = () => {
     )
   }
 
-  return <List temp={forecast[0].temp} days={1} />
+  return <List temp={forecast[0].temp} days={6} />
 }
 
 export default App

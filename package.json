@@ -8,9 +8,9 @@
   "license": "MIT",
   "dependencies": {
     "parcel": "^1.12.3",
-    "react": ">=15.5",
+    "react": "^16.8.6",
     "react-calendar": "^2.19.0",
-    "react-dom": ">=15.5"
+    "react-dom": "^16.8.6"
   },
   "scripts": {
     "start": "parcel src/index.html"

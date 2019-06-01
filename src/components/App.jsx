@@ -1,8 +1,9 @@
 // jshint esversion:6
 
-import React, { useState } from 'react';
-import Form from './Form';
-import List from './List';
+import React, { useState } from 'react'
+import Form from './Form'
+import List from './List'
+import Header from './Header'
 
 const App = () => {
   const [destination, setDestination] = useState("");
@@ -25,15 +26,20 @@ const App = () => {
       });
   };
 
+  let page = null
+
   if (!forecast.length) {
-    return (
-      <Form submit={submit} setDestination={setDestination} numDays={numDays} setNumDays={setNumDays} error={error} setLaundry={setLaundry}/>
-    )
+    page = <Form submit={submit} setDestination={setDestination} error={error} />
+  } else {
+    page = <Pack temp={forecast[0].temp} />
   }
 
-  return <List temp={forecast[0].temp} days={numDays} laundry={laundry}/>
+  return (
+    <div className="parent">
+      <Header />
+      <div className="row content">{page}</div>
+    </div>
+  )
 }
-
-
 
 export default App

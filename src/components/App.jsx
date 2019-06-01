@@ -1,6 +1,6 @@
 // jshint esversion:6
 
-import React, { useState } from 'react'
+import React, { useState, Fragment } from 'react'
 import Form from './Form'
 import List from './List'
 import Header from './Header'
@@ -8,7 +8,7 @@ import Header from './Header'
 const App = () => {
   const [destination, setDestination] = useState("");
   const [numDays, setNumDays] = useState(1);
-  const [forecast, setForecast] = useState([]);
+  const [forecast, setForecast] = useState([{ date: '2019-06-01', temp: 19 }]);
   const [error, setError] = useState(null);
   const [laundry, setLaundry] = useState(7);
 
@@ -26,19 +26,18 @@ const App = () => {
       });
   };
 
-  let page = null
-
-  if (!forecast.length) {
-    page = <Form submit={submit} setDestination={setDestination} error={error} />
-  } else {
-    page = <Pack temp={forecast[0].temp} />
-  }
+  let list = forecast.length
+    ? <List temp={forecast[0].temp} days={numDays} />
+    : null
 
   return (
-    <div className="parent">
+    <Fragment>
       <Header />
-      <div className="row content">{page}</div>
-    </div>
+      <div className="row content">
+        <Form submit={submit} setDestination={setDestination} numDays={numDays} setNumDays={setNumDays} error={error} />
+        {list}
+      </div>
+    </Fragment>
   )
 }
 

@@ -53,7 +53,7 @@ const List = ({ temp, days, laundry }) => {
 
 const generalRules = [
   {
-    item: 'Travel booking',
+    item: 'Tickets',
     needed:  (temp, days) => 1
   },
   {

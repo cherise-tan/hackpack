@@ -3,8 +3,7 @@ import React from 'react'
 const Header = (props) => {
   return (
     <div className="row header">
-      <div className="logo">logo</div>
-      <div className="menuicon">icon</div>
+      <div className="logo">Hack Pack</div>
     </div>
   )
 }

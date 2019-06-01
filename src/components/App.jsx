@@ -8,7 +8,7 @@ import Header from './Header'
 const App = () => {
   const [destination, setDestination] = useState("");
   const [numDays, setNumDays] = useState(1);
-  const [forecast, setForecast] = useState([{ date: '2019-06-01', temp: 19 }]);
+  const [forecast, setForecast] = useState([]);
   const [error, setError] = useState(null);
   const [laundry, setLaundry] = useState(7);
 
@@ -34,7 +34,14 @@ const App = () => {
     <Fragment>
       <Header />
       <div className="row content">
-        <Form submit={submit} setDestination={setDestination} numDays={numDays} setNumDays={setNumDays} error={error} />
+        <Form
+          submit={submit}
+          setDestination={setDestination}
+          numDays={numDays}
+          setNumDays={setNumDays}
+          laundry={laundry}
+          setLaundry={setLaundry}
+          error={error} />
         {list}
       </div>
     </Fragment>

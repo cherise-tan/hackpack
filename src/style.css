@@ -82,7 +82,7 @@ body {
 
 .item{
   width: 50%;
-  max-width: 400px;
+  max-width: 500px;
 }
 
 button {
@@ -96,6 +96,20 @@ button {
   border-radius: 10px;
   padding: 5px 10px;
 }
+/* .laundry:focus{
+  background-color: #12d3cf;
+  color: #fcf9ec;
+} */
+.laundry-not-selected{
+  background-color: transparent;
+  color: #12d3cf;
+}
+
+.laundry-selected{
+  background-color: #12d3cf;
+  color: #fcf9ec;
+}
+
 input{
   font-family: inherit;
   color: gray;
@@ -115,6 +129,22 @@ label {
   margin-top: 20px;
   margin-left: 10px;
 }
+.dest-label {
+  font-size: 16px;
+}
+#destination::placeholder {
+  font-style: italic;
+  color: #7ac1c0;
+}
+#destination {
+  background: transparent;
+  border: 0;
+  border-bottom: 3px solid #12d3cf;
+  font-size: 16px;
+  padding-left: 2px;
+  padding-right: 2px;
+  flex: 1;
+}
 button[type=submit]{
   color: #ffffff;
   font-size: 15px;
@@ -123,4 +153,25 @@ button[type=submit]{
   padding: 10px 25px;
   background-color: #ee5a5a;
   margin-top: 50px;
+}
+#app .react-calendar {
+  margin: 20px auto;
+  background: transparent;
+  border: 2px solid #12d3cf;
+  border-radius: 10px;
+  padding: 5px;
+}
+#app .react-calendar abbr {
+  text-decoration: none;
+  color: #7ac1c0;
+}
+#app .react-calendar__tile {
+  border: 5px solid #fcf9ec;
+
+}
+#app .react-calendar__tile--active {
+  background-color: #12d3cf;
+}
+#app .react-calendar__tile--active abbr {
+  color: white;
 }

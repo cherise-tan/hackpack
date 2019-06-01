@@ -27,7 +27,7 @@ const App = () => {
 
   if (!forecast.length) {
     return (
-      <Form submit={submit} setDestination={setDestination} numDays={numDays} setNumDays={setNumDays} error={error} setLaundry={setLaundry}/>
+      <Form submit={submit} setDestination={setDestination} numDays={numDays} setNumDays={setNumDays} error={error} laundry={laundry} setLaundry={setLaundry}/>
     )
   }
 

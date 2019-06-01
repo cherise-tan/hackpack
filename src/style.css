@@ -23,13 +23,17 @@ body {
 }
 
 .header{
-   align-self: flex-start;
-   align-items: flex-start;
+   align-items: center;
    display: flex;
    justify-content: space-between;
    background-color: white;
    padding: 10px 30px;
    box-sizing: border-box;
+}
+
+.logo{
+  font-family: Abril Fatface, Helvetica;
+  color: #12d3cf;
 }
 
 #app{

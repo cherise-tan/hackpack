@@ -2,13 +2,19 @@
 
 import React from 'react';
 
-const List = ({ temp, days }) => {
+const List = ({ temp, days, laundry }) => {
   const items = rules.map(item => {
     return {
       item: item.item,
       needed: item.needed(temp, days)
     }
   }).filter(item => {
+
+    if (item.needed > laundry){
+      item.needed = laundry;
+    }
+
+
     return item.needed > 0
   });
 
@@ -61,7 +67,7 @@ const rules = [
   },
   {
     item: 'Underwear',
-    needed: (temp, days) => days
+    needed: (temp, days) => days + 2
   },
   {
     item: 'Socks',

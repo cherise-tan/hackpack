@@ -9,6 +9,7 @@ const App = () => {
   const [numDays, setNumDays] = useState(1);
   const [forecast, setForecast] = useState([]);
   const [error, setError] = useState(null);
+  const [laundry, setLaundry] = useState(7);
 
   const submit = (event) => {
     event.preventDefault();
@@ -26,18 +27,13 @@ const App = () => {
 
   if (!forecast.length) {
     return (
-      <Form submit={submit} setDestination={setDestination} numDays={numDays} setNumDays={setNumDays} error={error} />
+      <Form submit={submit} setDestination={setDestination} numDays={numDays} setNumDays={setNumDays} error={error} setLaundry={setLaundry}/>
     )
   }
 
-  return <List temp={forecast[0].temp} days={numDays} />
+  return <List temp={forecast[0].temp} days={numDays} laundry={laundry}/>
 }
 
-const rules = [
-  {
-    item: 'Jacket',
-    needed: (temp, days) => temp < 20 ? 1 : 0
-  }
-]
+
 
 export default App

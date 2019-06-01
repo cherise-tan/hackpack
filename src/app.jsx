@@ -27,7 +27,7 @@ const App = () => {
 
 const Form = (props) => {
   return (
-    <form onSubmit = {props.submit}>
+    <form className="item" onSubmit = {props.submit}>
       <div className="inputblock">
         <label>I am going to: </label>
         <input id="destination" type="text" placeholder="Destination" onChange={(event) => props.setDestination(event.target.value)}/>
@@ -42,7 +42,7 @@ const Form = (props) => {
         <button>Pack Heavy</button>
       </div>
       <div className="inputblock">
-        <button  type="submit" value="submit">Submit</button>
+        <button  type="submit" value="submit">Let's Get Packing!</button>
       </div>
     </form>
   )

@@ -62,11 +62,15 @@ body {
     0 1px 2px rgba(0, 0, 0, 0.1),
     0 3px 10px rgba(0, 0, 0, 0.1);
 }
-.list header h3 {
+.list .list-header {
   background-color: #12d3cf;
   margin: -10px -20px 10px;
-  padding: 15px 30px;
+  display: flex;
+  padding: 0 30px;
   color: white;
+}
+.list .list-header .temp{
+  margin-left: auto;
 }
 .list ul {
   list-style-type: none;
@@ -100,10 +104,9 @@ button {
   border-radius: 10px;
   padding: 5px 10px;
 }
-/* .laundry:focus{
-  background-color: #12d3cf;
-  color: #fcf9ec;
-} */
+[class^=laundry]:focus {
+  outline: none;
+}
 .laundry-not-selected{
   background-color: #fcf9ec;
   color: #12d3cf;

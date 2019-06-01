@@ -23,12 +23,14 @@ body {
 }
 
 .header{
-   align-items: center;
-   display: flex;
-   justify-content: space-between;
-   background-color: white;
-   padding: 10px 30px;
-   box-sizing: border-box;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  padding: 10px 30px;
+  box-sizing: border-box;
 }
 
 .logo{

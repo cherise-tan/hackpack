@@ -10,10 +10,15 @@ const Form = (props) => {
 
   const setLaundry = (cycleLength) => (event) => {
     event.preventDefault();
-    props.setLaundry(cycleLength)
+    props.setLaundry(cycleLength);
+
   }
 
+  const packLight = props.laundry === 5 ? 'laundry-selected': 'laundry-not-selected';
+  const packHeavy = props.laundry === 10 ? 'laundry-selected': 'laundry-not-selected';
+
   return (
+
     <form className="item" onSubmit = {props.submit}>
       <div className="inputblock">
         <label>I am going to: </label>
@@ -28,8 +33,9 @@ const Form = (props) => {
       </div>
       <div className="inputblock">
         <label>Travel Style: </label>
-        <button onClick={setLaundry(5)}>Pack Light</button>
-        <button onClick={setLaundry(10)}>Pack Heavy</button>
+
+        <button className={packLight} onClick={setLaundry(5)}>Pack Light</button>
+        <button className={packHeavy} onClick={setLaundry(10)}>Pack Heavy</button>
       </div>
         {props.error && <ErrorMessage error={props.error} />}
       <div className="inputblock">
@@ -38,6 +44,8 @@ const Form = (props) => {
     </form>
   )
 }
+
+
 
 const ErrorMessage = (props) => {
   return (

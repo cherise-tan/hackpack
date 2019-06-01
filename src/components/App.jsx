@@ -34,7 +34,14 @@ const App = () => {
     <Fragment>
       <Header />
       <div className="row content">
-        <Form submit={submit} setDestination={setDestination} numDays={numDays} setNumDays={setNumDays} error={error} />
+        <Form
+          submit={submit}
+          setDestination={setDestination}
+          numDays={numDays}
+          setNumDays={setNumDays}
+          laundry={laundry}
+          setLaundry={setLaundry}
+          error={error} />
         {list}
       </div>
     </Fragment>

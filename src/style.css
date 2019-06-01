@@ -85,6 +85,20 @@ button {
   border-radius: 10px;
   padding: 5px 10px;
 }
+/* .laundry:focus{
+  background-color: #12d3cf;
+  color: #fcf9ec;
+} */
+.laundry-not-selected{
+  background-color: transparent;
+  color: #12d3cf;
+}
+
+.laundry-selected{
+  background-color: #12d3cf;
+  color: #fcf9ec;
+}
+
 input{
   font-family: inherit;
   color: gray;

@@ -1,6 +1,8 @@
-import React, { useState } from 'react'
-import Form from './Form'
-import List from './List'
+// jshint esversion:6
+
+import React, { useState } from 'react';
+import Form from './Form';
+import List from './List';
 
 const App = () => {
   const [destination, setDestination] = useState("");
@@ -18,8 +20,8 @@ const App = () => {
       .then(newForecast => setForecast(newForecast))
       .catch(err => {
         setError("Destination not found");
-      })
-  }
+      });
+  };
 
   if (!forecast.length) {
     return (
@@ -30,7 +32,7 @@ const App = () => {
     )
   }
 
-  return <Pack temp={forecast[0].temp} />
+  return <List temp={forecast[0].temp} days={1} />
 }
 
 export default App

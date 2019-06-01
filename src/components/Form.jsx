@@ -1,4 +1,8 @@
 import React from 'react'
+import Calendar from 'react-calendar'
+
+const MILLIS_PER_DAY = 1000 * 60 * 60 * 24
+const getLengthInDays = (start, end) => Math.ceil((end.valueOf() - start.valueOf()) / MILLIS_PER_DAY)
 
 const Form = (props) => {
   return (
@@ -9,7 +13,10 @@ const Form = (props) => {
       </div>
       <div className="inputblock">
         <label>Number of days away: </label>
-        <input id="number" type="number" value={props.numDays} onChange={event => props.setNumDays(Number(event.target.value))}/>
+        <Calendar
+          selectRange={true}
+          returnValue="range"
+          onChange={([start, end]) => props.setNumDays(getLengthInDays(start, end))} />
       </div>
       <div className="inputblock">
         <label>Travel Style: </label>

@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Calendar from 'react-calendar';
+import LoadingButton from './LoadingButton';
 
 const MILLIS_PER_DAY = 1000 * 60 * 60 * 24;
 const getLengthInDays = (start, end) => Math.ceil((end.valueOf() - start.valueOf()) / MILLIS_PER_DAY);
@@ -18,7 +19,6 @@ const Form = (props) => {
   const packHeavy = props.laundry === 10 ? 'laundry-selected': 'laundry-not-selected';
 
   return (
-
     <form className="item" onSubmit = {props.submit}>
       <div className="inputblock dest-inputblock">
         <label className="dest-label">I am going to </label>
@@ -37,9 +37,11 @@ const Form = (props) => {
         <button className={packLight} onClick={setLaundry(5)}>Pack Light</button>
         <button className={packHeavy} onClick={setLaundry(10)}>Pack Heavy</button>
       </div>
-        {props.error && <ErrorMessage error={props.error} />}
+
+      {props.error && <ErrorMessage error={props.error} />}
+
       <div className="inputblock">
-        <button  type="submit" value="submit">Submit</button>
+        <LoadingButton isLoading={props.isLoading} className="submit">Submit</LoadingButton>
       </div>
     </form>
   )

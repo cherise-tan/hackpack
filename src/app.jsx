@@ -5,9 +5,16 @@ import { render } from 'react-dom'
 
 const App = () => {
   const [temp, setTemp] = useState(null);
+  const [destination, setDestination] = useState("");
+
+  const submit = (event) => {
+    event.preventDefault();
+    console.log(destination);
+  }
 
   if (!temp) {
-    return <Form setTemp={setTemp} />
+    return <Form setTemp={setTemp} submit={submit} setDestination={setDestination}/>
+
   }
 
   return <Pack temp={temp} />
@@ -15,11 +22,11 @@ const App = () => {
 
 const Form = (props) => {
   return (
-    <form action="/" method="post">
+    <form onSubmit = {props.submit}>
 
     <div>
       <label>I am going to: </label>
-      <input id="destination" type="text" placeholder="Destination"/>
+      <input id="destination" type="text" placeholder="Destination" onChange={(event) => props.setDestination(event.target.value)}/>
     </div>
     <div>
       <label>Date of travel: </label>
@@ -31,7 +38,7 @@ const Form = (props) => {
       <button>Pack Heavy</button>
     </div>
     <div>
-      <button type="submit" value="submit">Submit</button>
+      <button  type="submit" value="submit">Submit</button>
     </div>
 
     <div>
@@ -40,7 +47,7 @@ const Form = (props) => {
       <button onClick = { () => props.setTemp("cold") } >Cold</button>
 
     </div>
-    </form>
+    </form >
   )
 }
 

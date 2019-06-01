@@ -109,7 +109,7 @@ button {
   outline: none;
 }
 .laundry-not-selected{
-  background-color: #fcf9ec;
+  background-color: #ffffff;
   color: #12d3cf;
 }
 
@@ -167,7 +167,7 @@ button.submit {
 }
 #app .react-calendar {
   margin: 20px auto;
-  background: #fcf9ec;
+  background: #ffffff;
   border: 2px solid #12d3cf;
   border-radius: 10px;
   padding: 5px;
@@ -177,14 +177,14 @@ button.submit {
   text-decoration: none;
   color: #7ac1c0;
 }
-#app .react-calendar__tile {
-  border: 5px solid #fcf9ec;
+laundry {
+  border: 5px solid #ffffff;
 
 }
-#app .react-calendar__tile--active {
+laundry--active {
   background-color: #12d3cf;
 }
-#app .react-calendar__tile--active abbr {
+laundry--active abbr {
   color: white;
 }
 

@@ -1,13 +1,13 @@
 // jshint esversion:6
 
-import React, { useState } from 'react';
+import React, { useState, Fragment } from 'react';
 import Form from './Form';
 import List from './List';
 
 const App = () => {
   const [destination, setDestination] = useState("");
   const [numDays, setNumDays] = useState(1);
-  const [forecast, setForecast] = useState([]);
+  const [forecast, setForecast] = useState([{ date: '2019-06-01', temp: 19 }]);
   const [error, setError] = useState(null);
 
   const submit = (event) => {
@@ -24,13 +24,16 @@ const App = () => {
       });
   };
 
-  if (!forecast.length) {
-    return (
-      <Form submit={submit} setDestination={setDestination} numDays={numDays} setNumDays={setNumDays} error={error} />
-    )
-  }
+  let list = forecast.length
+    ? <List temp={forecast[0].temp} days={numDays} />
+    : null
 
-  return <List temp={forecast[0].temp} days={numDays} />
+  return (
+    <Fragment>
+      <Form submit={submit} setDestination={setDestination} numDays={numDays} setNumDays={setNumDays} error={error} />
+      {list}
+    </Fragment>
+  )
 }
 
 const rules = [

@@ -13,9 +13,19 @@ const List = ({ temp, days }) => {
   });
 
   return (
-    <ul>
-      {items.map(item => <li>{item.item} x {item.needed}</li>)}
-    </ul>
+    <div className="list">
+      <header>
+        <h3>Packing List</h3>
+      </header>
+      <ul>
+        {items.map(item => (
+          <li key={item.item}>
+            <span className="item-name">{item.item}</span>
+            <span className="item-qty">x{item.needed}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
   )
 
 };

@@ -24,47 +24,51 @@ const List = ({ temp, days }) => {
 
 const rules = [
   {
+    item: 'Scarf',
+    needed: (temp, days) => temp < 10 ? 1 : 0
+  },
+  {
+    item: 'Beanie',
+    needed: (temp, days) => temp < 10 ? 1 : 0
+  },
+  {
     item: 'Jacket',
+    needed: (temp, days) => temp < 15 ? 1 : 0
+  },
+  {
+    item: 'Jumper',
     needed: (temp, days) => temp < 20 ? 1 : 0
   },
-
+  {
+    item: 'Long sleeved shirt',
+    needed: (temp, days) => temp < 15 ? (Math.ceil(days / 3)) : 0
+  },
+  {
+    item: 'T-shirt',
+    needed: (temp, days) => temp > 15 ? (Math.ceil(days / 2)) : 0
+  },
+  {
+    item: 'Singlet',
+    needed: (temp, days) => temp > 25 ? (Math.ceil(days / 2)) : 0
+  },
+  {
+    item: 'Shorts',
+    needed: (temp, days) => temp > 20 ? (Math.ceil(days / 3)) : 0
+  },
   {
     item: 'Pants',
     needed: (temp, days) => Math.ceil(days / 3)
+  },
+  {
+    item: 'Underwear',
+    needed: (temp, days) => days
+  },
+  {
+    item: 'Socks',
+    needed: (temp, days) => days + 2
   }
 ];
 
 
-
-
-
-const PackCold = () => {
-  return(
-    <ul>
-    <li>Jacket</li>
-    <li>Pants</li>
-    <li>Scarf</li>
-    </ul>
-  )
-}
-
-const PackMild = () => {
-  return(
-    <ul>
-    <li>Jumper</li>
-    <li>Pants</li>
-    <li>Hat</li>
-    </ul>
-  )
-}
-
-const PackHot = () => {
-  return(
-    <ul>
-    <li>Singlet</li>
-    <li>Shorts</li>
-    </ul>
-  )
-}
 
 export default List

@@ -20,12 +20,12 @@ const Form = (props) => {
   return (
 
     <form className="item" onSubmit = {props.submit}>
-      <div className="inputblock">
-        <label>I am going to: </label>
-        <input id="destination" type="text" placeholder="Destination" onChange={(event) => props.setDestination(event.target.value)}/>
+      <div className="inputblock dest-inputblock">
+        <label className="dest-label">I am going to </label>
+        <input id="destination" type="text" placeholder="destination" onChange={(event) => props.setDestination(event.target.value)}/>
+        <label className="dest-label"> on these dates</label>
       </div>
       <div className="inputblock">
-        <label>Number of days away: </label>
         <Calendar
           selectRange={true}
           returnValue="range"

@@ -8,7 +8,7 @@ import Header from './Header'
 const App = () => {
   const [destination, setDestination] = useState("");
   const [numDays, setNumDays] = useState(1);
-  const [forecast, setForecast] = useState([{ date: '2019-06-01', temp: 19 }]);
+  const [forecast, setForecast] = useState([]);
   const [error, setError] = useState(null);
   const [laundry, setLaundry] = useState(7);
 

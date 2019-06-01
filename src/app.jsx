@@ -6,6 +6,7 @@ import { render } from 'react-dom'
 const App = () => {
   const [destination, setDestination] = useState("");
   const [forecast, setForecast] = useState([]);
+  const [error, setError] = useState(null);
 
   const submit = (event) => {
     event.preventDefault();
@@ -16,13 +17,29 @@ const App = () => {
         temp: day.day.avgtemp_c,
       })))
       .then(newForecast => setForecast(newForecast))
+      .catch(err => {
+        setError("Destination not found");
+      })
   }
 
   if (!forecast.length) {
-    return <Form submit={submit} setDestination={setDestination}/>
+    return (
+      <div>
+
+      <Form submit={submit} setDestination={setDestination} error={error} />
+      </div>
+    )
   }
 
   return <Pack temp={forecast[0].temp} />
+}
+
+const ErrorMessage = (props) => {
+  return (
+    <div>
+    <h3>{props.error}</h3>
+    </div>
+  )
 }
 
 const Form = (props) => {
@@ -41,6 +58,7 @@ const Form = (props) => {
         <button>Pack Light</button>
         <button>Pack Heavy</button>
       </div>
+        {props.error && <ErrorMessage error={props.error} />}
       <div className="inputblock">
         <button  type="submit" value="submit">Submit</button>
       </div>

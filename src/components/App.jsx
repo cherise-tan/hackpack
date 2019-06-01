@@ -25,10 +25,7 @@ const App = () => {
 
   if (!forecast.length) {
     return (
-      <div>
-
       <Form submit={submit} setDestination={setDestination} error={error} />
-      </div>
     )
   }
 

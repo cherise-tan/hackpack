@@ -5,6 +5,17 @@ body {
   text-align: center;
   margin: 10px;
 }
+#app{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.item{
+  width: 50%;
+  height: 50%;
+  margin: auto;
+}
 button {
   background-color: transparent;
   border: 2px solid #12d3cf;

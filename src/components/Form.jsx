@@ -1,6 +1,18 @@
-import React from 'react'
+// jshint esversion:6
+
+import React from 'react';
+import Calendar from 'react-calendar';
+
+const MILLIS_PER_DAY = 1000 * 60 * 60 * 24;
+const getLengthInDays = (start, end) => Math.ceil((end.valueOf() - start.valueOf()) / MILLIS_PER_DAY);
 
 const Form = (props) => {
+
+  const setLaundry = (cycleLength) => (event) => {
+    event.preventDefault();
+    props.setLaundry(cycleLength)
+  }
+
   return (
     <form className="item" onSubmit = {props.submit}>
       <div className="inputblock">
@@ -8,13 +20,16 @@ const Form = (props) => {
         <input id="destination" type="text" placeholder="Destination" onChange={(event) => props.setDestination(event.target.value)}/>
       </div>
       <div className="inputblock">
-        <label>Date of travel: </label>
-        <input id="date" type="date" placeholder="Date"/>
+        <label>Number of days away: </label>
+        <Calendar
+          selectRange={true}
+          returnValue="range"
+          onChange={([start, end]) => props.setNumDays(getLengthInDays(start, end))} />
       </div>
       <div className="inputblock">
         <label>Travel Style: </label>
-        <button>Pack Light</button>
-        <button>Pack Heavy</button>
+        <button onClick={setLaundry(5)}>Pack Light</button>
+        <button onClick={setLaundry(10)}>Pack Heavy</button>
       </div>
         {props.error && <ErrorMessage error={props.error} />}
       <div className="inputblock">

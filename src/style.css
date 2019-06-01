@@ -1,7 +1,8 @@
 body {
-  background-color: #fcf9ec;
+  background-color: rgb(125, 175, 175);
+  color: #7ac1c0;
   font: 15px/1.3 sans-serif;
-  background: url("images/bgimage.jpg") fixed;
+  background:  url("images/bgimage.jpg") fixed;
   background-size: cover;
   padding: 0;
   margin: 0;
@@ -63,6 +64,8 @@ body {
   padding: 10px 20px;
   margin: 0px 40px 40px 40px;
   max-width: 400px;
+  border-radius: 10px;
+  overflow: hidden;
   box-shadow:
     0 1px 2px rgba(0, 0, 0, 0.1),
     0 3px 10px rgba(0, 0, 0, 0.1);
@@ -223,5 +226,16 @@ button.submit {
   width: 180px;
   border-radius: 999px;
   margin: 20px auto;
+  color: white;
+}
+
+
+#app .react-calendar__tile {
+  border: 5px solid white;
+}
+#app .react-calendar__tile--active {
+  background-color: #12d3cf;
+}
+#app .react-calendar__tile--active abbr {
   color: white;
 }

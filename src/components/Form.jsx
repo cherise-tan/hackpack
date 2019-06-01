@@ -11,15 +11,15 @@ const Form = (props) => {
 
   const setLaundry = (cycleLength) => (event) => {
     event.preventDefault();
+    console.log(cycleLength)
     props.setLaundry(cycleLength);
-
   }
 
   const packLight = props.laundry === 5 ? 'laundry-selected': 'laundry-not-selected';
   const packHeavy = props.laundry === 10 ? 'laundry-selected': 'laundry-not-selected';
 
   return (
-    <form autocomplete="off" className="item" onSubmit = {props.submit}>
+    <form autoComplete="off" className="item" onSubmit = {props.submit}>
       <div className="inputblock dest-inputblock">
         <label className="dest-label">I am going to </label>
         <input id="destination" type="text" placeholder="destination" onChange={(event) => props.setDestination(event.target.value)}/>

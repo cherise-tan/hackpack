@@ -31,12 +31,13 @@ const App = () => {
   };
 
   let list = forecast.length
-    ? <List temp={forecast[0].temp} days={numDays} />
+    ? <List temp={forecast[0].temp} days={numDays} laundry={laundry} />
     : null
 
   return (
     <Fragment>
       <Header />
+      <h1>{laundry}</h1>
       <div className="row content">
         <Form
           submit={submit}

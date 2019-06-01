@@ -2,21 +2,35 @@
 
 import React from 'react';
 
+
+
+const renderItems = items => items.map(item => (
+  <li key={item.item}>
+    <span className="item-name">{item.item}</span>
+    <span className="item-qty">x{item.needed}</span>
+  </li>
+))
+
+
 const List = ({ temp, days, laundry }) => {
-  const items = rules.map(item => {
+
+  const getNeededItems = (rules) => rules.map(item => {
     return {
       item: item.item,
       needed: item.needed(temp, days)
-    }
+    };
   }).filter(item => {
 
     if (item.needed > laundry){
       item.needed = laundry;
     }
 
-
-    return item.needed > 0
+    return item.needed > 0;
   });
+
+  const generalItems = getNeededItems(generalRules);
+  const clothes =getNeededItems(clothesRules);
+
 
   return (
     <div className="list">
@@ -24,22 +38,50 @@ const List = ({ temp, days, laundry }) => {
         <h3>Packing List</h3>
         <h3 class="temp">{temp} °C</h3>
       </header>
+      <h4>General</h4>
       <ul>
-        {items.map(item => (
-          <li key={item.item}>
-            <span className="item-name">{item.item}</span>
-            <span className="item-qty">x{item.needed}</span>
-          </li>
-        ))}
+        {renderItems(generalItems)}
+      </ul>
+      <h4>Clothes</h4>
+      <ul>
+        {renderItems(clothes)}
       </ul>
     </div>
   )
-
 };
 
+const generalRules = [
+  {
+    item: 'Travel booking',
+    needed:  (temp, days) => 1
+  },
+  {
+    item: 'Passport',
+    needed: (temp, days) => 1
+  },
+  {
+    item: 'Travel Adaptor',
+    needed: (temp, days) => 1
+  },
+  {
+    item: 'Cellphone + Charger',
+    needed: (temp, days) => 1
+  },
+  {
+    item: 'Laptop + Charger',
+    needed: (temp, days) => 1
+  },
+  {
+    item: 'Kindle',
+    needed: (temp, days) => 1
+  },
+  {
+    item: 'Headphones',
+    needed: (temp, days) => 1
+  }
+]
 
-
-const rules = [
+const clothesRules = [
   {
     item: 'Scarf',
     needed: (temp, days) => temp < 10 ? 1 : 0
@@ -47,6 +89,14 @@ const rules = [
   {
     item: 'Beanie',
     needed: (temp, days) => temp < 10 ? 1 : 0
+  },
+  {
+    item: 'Gloves',
+    needed: (temp, days) => temp < 10 ? 1 : 0
+  },
+  {
+    item: 'Sunglasses',
+    needed: (temp, days) => temp > 20 ? 1 : 0
   },
   {
     item: 'Jacket',
@@ -83,9 +133,31 @@ const rules = [
   {
     item: 'Socks',
     needed: (temp, days) => days + 2
+  },
+  {
+    item: 'Sneakers',
+    needed: (temp, days) => 1
+  },
+  {
+    item: 'Sandals',
+    needed: (temp, days) => temp > 20 ? 1 : 0
   }
 ];
 
+const toiletriesRules = [
+  {
+    item: 'Toothbrush',
+    needed: (temp, days) => 1
+  },
+  {
+    item: 'Deoderant',
+    needed: (temp, days) => 1
+  },
+  {
+    item: 'Sunblock',
+    needed: (temp, days) => temp > 15 ? 1 : 0
+  }
+]
 
 
 export default List

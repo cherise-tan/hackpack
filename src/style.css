@@ -1,14 +1,46 @@
 body {
   background-color: #fcf9ec;
 }
+.inputblock{
+  text-align: center;
+  margin: 10px;
+}
 button {
   background-color: transparent;
   border: 2px solid #12d3cf;
   color: #12d3cf;
   text-align: center;
   font-size: 12px;
-  margin: 5px;
-  border-radius: 30px;
-  padding: 8px 10px;
-
+  margin-top: 5px;
+  margin-right: 5px;
+  border-radius: 10px;
+  padding: 5px 10px;
+}
+input{
+  font-family: inherit;
+  color: gray;
+  display: inline-block;
+}
+input[type=text], input[type=date]{
+  padding: 2px 5px;
+}
+::-webkit-input-placeholder,
+::placeholder {
+  font-family: sans-serif;
+}
+label {
+  color: #293462;
+  font-family: sans-serif;
+  font-size: 14px;
+  margin-top: 20px;
+  margin-left: 10px;
+}
+button[type=submit]{
+  color: #ffffff;
+  font-size: 15px;
+  border: 2px solid;
+  border-radius: 20px;
+  padding: 10px 25px;
+  background-color: #ee5a5a;
+  margin-top: 50px;
 }

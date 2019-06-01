@@ -51,8 +51,8 @@ const Form = (props) => {
 
 const ErrorMessage = (props) => {
   return (
-    <div>
-    <h3>{props.error}</h3>
+    <div className="error-msg">
+      {props.error}
     </div>
   )
 }

@@ -209,3 +209,13 @@ button.submit {
     transform: rotate(360deg);
   }
 }
+
+.error-msg {
+  background-color: #ee5a5a;
+  padding: 10px 20px;
+  text-align: center;
+  width: 180px;
+  border-radius: 999px;
+  margin: 20px auto;
+  color: white;
+}

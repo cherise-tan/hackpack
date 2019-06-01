@@ -1,8 +1,8 @@
 body {
   background-color: #fcf9ec;
   font: 15px/1.3 sans-serif;
+  background: url("images/bgimage.jpg") fixed;
   background-size: cover;
-  background-image: url("images/bgimage.jpg");
   padding: 0;
   margin: 0;
   height: 100vh;
@@ -41,17 +41,16 @@ body {
   height: 100%;
 }
 
-.content{
+.content {
   display: flex;
   justify-content: center;
-  align-items: center;
-  align-self: center;
   padding: 20px 0;
 }
 
 .row{
   flex-direction: row;
   width: 100%;
+  align-items: flex-start;
 }
 .list {
   flex: 1;
@@ -92,6 +91,8 @@ body {
 .item{
   width: 50%;
   max-width: 500px;
+  position: sticky;
+  top: 20px;
 }
 
 button {

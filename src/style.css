@@ -34,6 +34,7 @@ body {
 .logo{
   font-family: Abril Fatface, Helvetica;
   color: #12d3cf;
+  font-size: 20px;
 }
 
 #app{
@@ -160,7 +161,7 @@ button.submit {
   border-radius: 20px;
   padding: 10px 25px;
   background-color: #ee5a5a;
-  margin-top: 50px;
+  margin-top: 22px;
   width: 120px;
   text-align: center;
 }

@@ -19,7 +19,7 @@ const Form = (props) => {
   const packHeavy = props.laundry === 10 ? 'laundry-selected': 'laundry-not-selected';
 
   return (
-    <form className="item" onSubmit = {props.submit}>
+    <form autocomplete="off" className="item" onSubmit = {props.submit}>
       <div className="inputblock dest-inputblock">
         <label className="dest-label">I am going to </label>
         <input id="destination" type="text" placeholder="destination" onChange={(event) => props.setDestination(event.target.value)}/>

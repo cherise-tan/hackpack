@@ -28,7 +28,7 @@ body {
    display: flex;
    justify-content: space-between;
    background-color: white;
-   padding: 10px;
+   padding: 10px 30px;
    box-sizing: border-box;
 }
 
@@ -86,7 +86,7 @@ body {
 }
 
 button {
-  background-color: transparent;
+  background-color: #fcf9ec;
   border: 2px solid #12d3cf;
   color: #12d3cf;
   text-align: center;
@@ -101,7 +101,7 @@ button {
   color: #fcf9ec;
 } */
 .laundry-not-selected{
-  background-color: transparent;
+  background-color: #fcf9ec;
   color: #12d3cf;
 }
 
@@ -134,12 +134,12 @@ label {
 }
 #destination::placeholder {
   font-style: italic;
-  color: #7ac1c0;
+  color: #b0f4e6;
 }
 #destination {
   background: transparent;
   border: 0;
-  border-bottom: 3px solid #12d3cf;
+  border-bottom: 3px solid #b0f4e6;
   font-size: 16px;
   padding-left: 2px;
   padding-right: 2px;
@@ -156,10 +156,11 @@ button[type=submit]{
 }
 #app .react-calendar {
   margin: 20px auto;
-  background: transparent;
+  background: #fcf9ec;
   border: 2px solid #12d3cf;
   border-radius: 10px;
   padding: 5px;
+
 }
 #app .react-calendar abbr {
   text-decoration: none;

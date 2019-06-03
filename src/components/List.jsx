@@ -31,9 +31,9 @@ const List = ({ temp, days, laundry }) => {
 
   return (
     <div className="list">
-      <header class="list-header">
+      <header className="list-header">
         <h3>Packing List</h3>
-        <h3 class="temp">{temp} °C</h3>
+        <h3 className="temp">{temp} °C</h3>
       </header>
       <h4>General</h4>
       <ul>

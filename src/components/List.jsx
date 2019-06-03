@@ -14,16 +14,9 @@ const List = ({ temp, days, laundry }) => {
   const getNeededItems = (rules) => rules.map(item => {
     return {
       item: item.item,
-      needed: item.needed(temp, days)
+      needed: Math.min(laundry, item.needed(temp, days))
     };
-  }).filter(item => {
-
-    if (item.needed > laundry){
-      item.needed = laundry;
-    }
-
-    return item.needed > 0;
-  });
+  }).filter(item => item.needed > 0);
 
   const generalItems = getNeededItems(generalRules);
   const clothes = getNeededItems(clothesRules);

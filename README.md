@@ -12,7 +12,7 @@ It was built using React, and can be accessed at: https://hackpack.netlify.com/
 * April Liau
 
 ### Features
-* Users can enter in their destination, dates of travel, length of stay and preferred style of travel (light/heavy)
+* Users can enter in their destination, dates of travel, length of stay and preferred style of packing (light/heavy)
 * Queries the Apixu Weather API for weather information based on trip destination
-* Returns a customised packing list for the user, based on the weather (temperature), length of stay and travel style
+* Returns a customised packing list for the user, based on the weather (temperature), length of stay and packing style
 * Hosted on Netlify
